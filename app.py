@@ -12,7 +12,7 @@ from keras.layers import Dense
 # ==========================================
 # 1. CONFIGURATION ET STYLE CSS "ULTRA-GLOW"
 # ==========================================
-st.set_page_config(page_title="CardioPredict Prime", layout="wide", page_icon="🫀")
+st.set_page_config(page_title="CardioPredict", layout="wide", page_icon="🫀")
 
 st.markdown("""
     <style>
@@ -23,7 +23,27 @@ st.markdown("""
         color: #ffffff;
         font-family: 'Poppins', sans-serif;
     }
+    /* Force le fond noir profond sur toute l'application */
+    [data-testid="stAppViewContainer"] {
+        background-color: #0f0c29 !important;
+    }
 
+    /* Force le fond sombre de la sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #0b091f !important;
+    }
+
+    /* Harmonise les onglets (Tabs) pour qu'ils ne soient pas blancs */
+    button[data-baseweb="tab"] {
+        background-color: transparent !important;
+        color: white !important;
+    }
+
+    /* Style de l'onglet actif */
+    button[aria-selected="true"] {
+        border-bottom-color: #00d4ff !important;
+        color: #00d4ff !important;
+    }
     /* Animation du Titre Cyberpunk */
     .title-text {
         font-family: 'Orbitron', sans-serif;
@@ -210,7 +230,7 @@ def get_recommendations(prob, age, chol, bp, mhr):
 # 4. STRUCTURE DE L'APPLICATION
 # ==========================================
 
-st.markdown('<h1 class="title-text">CARDIO PREDICT PRIME</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="title-text">CARDIO PREDICT AI</h1>', unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["🚀 ACCUEIL", "🧬 DIAGNOSTIC EXPERT", "📉 ANALYSE TECHNIQUE"])
 
@@ -350,4 +370,5 @@ st.sidebar.markdown(f"""
         <p style='font-size: 0.8em;'>Hamad • Rassem • Mahamat</p>
         <p style='font-size: 0.7em; color: #888;'>Projet master 2 Deep learning</p>
     </div>
+
 """, unsafe_allow_html=True)
