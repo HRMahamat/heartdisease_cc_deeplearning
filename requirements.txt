@@ -1,0 +1,7 @@
+streamlit
+pandas
+numpy
+pickle
+torch==2.16.0
+plotly
+keras
